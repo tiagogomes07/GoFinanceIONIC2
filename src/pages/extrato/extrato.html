@@ -14,18 +14,67 @@
 
 
 <ion-content padding>
-        <div class="row header">
-                <div class="col">Utility Company Name</div>
-                <div class="col">Service Code</div>
-                <div class="col">Pay Limit</div>
-                <div class="col">Account Number to Use</div>
-                <div class="col"></div>
-              </div>
-              <div class="row" ng-repeat="data in ctrl.data">
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"><button class="button" >Add</button></div>
-              </div>
+  <div class="">
+    <div class="">
+      <div style="overflow-x:auto;">								
+          <table id="customers">
+              <tr>
+                <th>Data</th>
+                
+                <th>Descrição</th> 
+                <th>Valor</th>
+                <th>Saldo</th>
+              </tr>
+              <tr>
+                <td>01/01</td>
+                
+                <td>Almoço zzzzzz</td>
+                <td>-239,50</td>
+                <td>1000,00</td>
+              </tr>
+              <tr>
+                <td>31/12</td>
+                
+                <td>Lanche yyyyyyyyyy</td>
+                <td>-117,50</td>
+                <td> 875,00</td>
+              </tr>
+              <tr>
+                <td>01/01</td>
+                
+                <td>Almoço ooooooooo</td>
+                <td>-239,50</td>
+                <td> 500,00</td>
+              </tr>
+          </table>
+
+
+
+        <style>
+          #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #387ef5;
+    color: white;
+}
+        </style>
+      </div>
+    </div>
+  </div>	
 </ion-content>
