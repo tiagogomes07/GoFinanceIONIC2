@@ -18,7 +18,7 @@ export class MyApp {
 
   public paginas = [
     { titulo: 'Lançamento', component: LancamentoPage },
-    { titulo: 'Graficos', component: ChartJsPage },
+    { titulo: 'Gráficos', component: ChartJsPage },
     { titulo: 'Extrato', component: ExtratoPage },
     { titulo: 'Meu Perfil', component: MeuPerfilPage }
     

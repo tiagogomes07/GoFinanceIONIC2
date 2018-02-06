@@ -14,6 +14,7 @@ import { LancamentoPage } from '../pages/lancamento/lancamento';
 import { ChartJsPage } from '../pages/chart-js/chart-js';
 import { ExtratoPage } from '../pages/extrato/extrato';
 import { MeuPerfilPage } from '../pages/meu-perfil/meu-perfil';
+import { ApiService } from '../service/api';
 
 function provideStorage(){
 
@@ -34,7 +35,7 @@ function provideStorage(){
     LancamentoPage,
     ChartJsPage,
     ExtratoPage,
-    MeuPerfilPage
+    MeuPerfilPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -52,7 +53,7 @@ function provideStorage(){
     MeuPerfilPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, 
-    AgendamentoService,  
+    AgendamentoService, ApiService,  
     { provide: Storage, useFactory: provideStorage},
     AgendamentoDAO
   ]

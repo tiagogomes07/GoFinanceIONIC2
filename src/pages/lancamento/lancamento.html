@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
       <ion-title>
-        Lancamento
+        Lançamento
       </ion-title>
     </ion-navbar>
   </ion-header>
@@ -11,12 +11,11 @@
       <ion-card style="background-color:#011b3f; 
                        color:white;
                        ">
-
           <ion-card-content style="font-family:Roboto,Helvetica Neue, sans-serif;font-size:1.7rem">
               <ion-grid>
                   <ion-row>
                     <ion-col> 
-                        Saldo
+                        Saldo Atual
                     </ion-col>
                     <ion-col>
                         R$ 3.645,00 
@@ -29,30 +28,35 @@
           <ion-list>
             <ion-item>
                     <ion-label>Date</ion-label>
-                    <ion-datetime displayFormat="MMM DD YYYY" ></ion-datetime>
+                    <ion-datetime [(ngModel)]="lancamento.Data" name="lancamento.Data" displayFormat="MMM DD YYYY" ></ion-datetime>
                     </ion-item>
             <ion-item>
                     <ion-label>Tipo</ion-label>
-                    <ion-select>
-                            <ion-option value="" selected="true">Gasolina</ion-option>
-                            <ion-option value="">Energia</ion-option>
-                            <ion-option value="" selected="true">Iptu</ion-option>
+                    <ion-select  name="">
+                            <ion-option   *ngFor="let tipo of Tipos">{{tipo}}</ion-option>
+                            
+                            
                     </ion-select>
             </ion-item>
 
             <ion-item>
               <ion-label fixed>Descrição</ion-label>
-              <ion-input type="text" value=""></ion-input>
+              <ion-input [(ngModel)]="lancamento.Descricao" name="lancamento.Descricao"  style="text-align:right" type="text" ></ion-input>
             </ion-item>
           
             <ion-item>
               <ion-label fixed>Valor</ion-label>
-              <ion-input type="number"></ion-input>
+              <ion-input  [(ngModel)]="lancamento.ValorStr" name="lancamento.ValorStr"  style="text-align:right" type="text"></ion-input>
+              
             </ion-item>
           
+            <ion-item>
+                <ion-label fixed>Valor22</ion-label>
+              <input type="text" name="name" style="text-align:right" value="">
+            </ion-item>
           </ion-list>
           <div padding>
-            <button ion-button block>Salvar</button>
+            <button (click)="create()" ion-button block>Salvar</button>
         </div>
   </ion-content>
 
