@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Lançamento
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+
+      <ion-card style="background-color:#011b3f; 
+                       color:white;
+                       ">
+          <ion-card-content style="font-family:Roboto,Helvetica Neue, sans-serif;font-size:1.7rem">
+              <ion-grid>
+                  <ion-row>
+                    <ion-col> 
+                        Saldo Atual
+                    </ion-col>
+                    <ion-col>
+                        R$ 3.645,00 
+                    </ion-col> 
+                  </ion-row>
+              </ion-grid>
+          </ion-card-content>
+      </ion-card>
+
+          <ion-list>
+            <ion-item>
+                    <ion-label>Date</ion-label>
+                    <ion-datetime [(ngModel)]="lancamento.data" name="lancamento.Data" displayFormat="MMM DD YYYY" ></ion-datetime>
+                    </ion-item>
+            <ion-item>
+                    <ion-label>Tipo</ion-label>
+                    <ion-select  name="">
+                            <ion-option   *ngFor="let tipo of Tipos">{{tipo}}</ion-option>
+                            
+                            
+                    </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label fixed>Descrição</ion-label>
+              <ion-input [(ngModel)]="lancamento.descricao" name="lancamento.Descricao"  style="text-align:right" type="text" ></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label fixed>Valor</ion-label>
+              <ion-input  [(ngModel)]="lancamento.valor" name="lancamento.Valor"  style="text-align:right" type="number"></ion-input>
+              
+            </ion-item>
+          
+          </ion-list>
+          <div padding>
+            <button (click)="create()" ion-button block>Salvar</button>
+        </div>
+  </ion-content>
+
